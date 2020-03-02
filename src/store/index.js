@@ -12,6 +12,7 @@ export default new Vuex.Store({
         id: 5,
         viewKey: 'all'
     },
+    // 只有mutations才能修改state中的值
     mutations: {
         initList(state, list) {
             state.list = list
@@ -47,6 +48,7 @@ export default new Vuex.Store({
         }
 
     },
+    // 将state中的值包装一下返回，不会改变state中的值
     getters: {
         undoneList(state) {
             return state.list.filter(item => !item.done).length
